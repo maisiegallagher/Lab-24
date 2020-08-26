@@ -6,15 +6,19 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>Vote Page</title>
 </head>
 <body>
 
 <div class="container">
  <p>Navigation:
      <a href="/">Parties</a>
-     <a href="/review-page">Review Options</a></p>
+     <a href="/review">Review Options</a></p>
+     
+     <div>
 		<h1>Pizza Options</h1>
+		</div>
+		<div>
 		<table class="table">
 			<thead>
 				<tr>
@@ -24,18 +28,18 @@
 				</tr>
 			</thead>
 			<tbody>
-				<c:forEach var="pizza" items="${pizzaOption}">
+				<c:forEach var="pizza" items="${leListOfOptions}">
 					<tr>
 						<td>${pizza.name}</td>
 						<td>${pizza.description}</td>
 						<td>${pizza.votes}</td>
-						<td><a href="/addMoreVotes?id=${pizza.id}">Vote</a></td>
+						<td><a href="/addMoreVotes?id=${pizza.id}">Vote!</a></td>
 						
 					</tr>
 				</c:forEach>
 			</tbody>
 		</table>
-	
+	</div>
 	<form action="/addNewPizza" method="post">
 	<h2>Add on option</h2>
 	<label>Name:</label>

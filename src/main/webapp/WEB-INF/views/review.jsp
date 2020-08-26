@@ -9,11 +9,12 @@
 <title>Insert title here</title>
 </head>
 <body>
-<h1>Pizza Options</h1>
 <div class="container">
 <p>Navigation:
      <a href="/">Parties</a>
      <a href="/votes">Votes</a></p>
+     
+     <h1>Pizza Options</h1>
 <table class="table">
 			<thead>
 				<tr>

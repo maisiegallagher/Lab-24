@@ -1,15 +1,17 @@
 package co.grandcircus.Lab24pizzapartyplan;
 
 import java.time.LocalDate;
+import java.util.Set;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "pizza_party")
+@Table(name = "party")
 public class Party {
 
 	@Id
@@ -17,6 +19,8 @@ public class Party {
 	private long id;
 	private String name;
 	private LocalDate date;
+	@OneToMany(mappedBy="party")
+	private Set<Rsvp> rsvps;
 
 	public Party() {
 		super();

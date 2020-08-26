@@ -12,10 +12,10 @@ public class PartyOption {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private int id;
+	private Long id;
 	private String name;
 	private String description;
-	private int votes;
+	private Integer votes = 0;
 
 	
 	
@@ -24,7 +24,9 @@ public class PartyOption {
 		// TODO Auto-generated constructor stub
 	}
 
-	public PartyOption(int id, String name, String description, int votes) {
+
+
+	public PartyOption(Long id, String name, String description, Integer votes) {
 		super();
 		this.id = id;
 		this.name = name;
@@ -32,41 +34,61 @@ public class PartyOption {
 		this.votes = votes;
 	}
 
-	public int getId() {
+
+
+	public Long getId() {
 		return id;
 	}
 
-	public void setId(int id) {
+
+
+	public void setId(Long id) {
 		this.id = id;
 	}
+
+
 
 	public String getName() {
 		return name;
 	}
 
+
+
 	public void setName(String name) {
 		this.name = name;
 	}
+
+
 
 	public String getDescription() {
 		return description;
 	}
 
+
+
 	public void setDescription(String description) {
 		this.description = description;
 	}
 
-	public int getVotes() {
+
+
+	public Integer getVotes() {
 		return votes;
 	}
 
-	public void setVotes(int votes) {
+
+
+	public void setVotes(Integer votes) {
 		this.votes = votes;
 	}
+
+
 
 	@Override
 	public String toString() {
 		return "PartyOption [id=" + id + ", name=" + name + ", description=" + description + ", votes=" + votes + "]";
 	}
+	
+	
 
 }

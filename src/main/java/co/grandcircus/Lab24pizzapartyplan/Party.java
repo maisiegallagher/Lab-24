@@ -12,6 +12,8 @@ import javax.persistence.Table;
 @Table(name = "pizza_party")
 public class Party {
 
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private long id;
 	private String name;
 	private LocalDate date;

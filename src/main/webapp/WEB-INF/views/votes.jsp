@@ -9,12 +9,13 @@
 <title>Insert title here</title>
 </head>
 <body>
-<h1>Pizza Options</h1>
+
 <div class="container">
-<p>Navigation:
+ <p>Navigation:
      <a href="/">Parties</a>
-     <a href="/votes">Votes</a></p>
-<table class="table">
+     <a href="/review-page">Review Options</a></p>
+		<h1>Pizza Options</h1>
+		<table class="table">
 			<thead>
 				<tr>
 					<th>Name</th>
@@ -23,19 +24,26 @@
 				</tr>
 			</thead>
 			<tbody>
-				<c:forEach var="sortByVotes" items="${pizza}">
-				<c:if test="${sortByVotes.votes >0}">
+				<c:forEach var="pizza" items="${pizzaOption}">
 					<tr>
-						<td>${sortByVotes.name}</td>
-						<td>${sortByVotes.description}</td>
-						<td>${sortByVotes.votes}</td>
+						<td>${pizza.name}</td>
+						<td>${pizza.description}</td>
+						<td>${pizza.votes}</td>
+						<td><a href="/addMoreVotes?id=${pizza.id}">Vote</a></td>
 						
 					</tr>
-					</c:if>
 				</c:forEach>
 			</tbody>
 		</table>
-		</div>
+	
+	<form action="/addNewPizza" method="post">
+	<h2>Add on option</h2>
+	<label>Name:</label>
+	<input type="text" name="name"/>
+	<input type="text" name="description"/>
+	<button type="submit">Add</button>
+	</form>
+	</div>
 
 </body>
 </html>

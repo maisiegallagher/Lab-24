@@ -20,6 +20,9 @@ public class PartyController {
 
 	@Autowired
 	private PartyOptionDao partyOptionDao;
+	
+	@Autowired
+	private RsvpDao rsvpDao;
 
 	@RequestMapping("/")
 	public String homepage() {
@@ -35,6 +38,7 @@ public class PartyController {
 
 		return "homepage";
 	}
+	
 
 	@RequestMapping("/partyoption")
 	public String listPizzaOptions(Model model) {
@@ -72,6 +76,12 @@ public class PartyController {
 	{
 		model.addAttribute("party",party);
 		return "rsvp";
+	}
+	
+	@RequestMapping("/save-rsvp")
+	public String submitRSVP(Rsvp rsvp) {
+		  rsvpDao.save(rsvp);
+		  return "redirect:/party";
 	}
 	
 	

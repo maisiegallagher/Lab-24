@@ -16,7 +16,7 @@ public class Party {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private long id;
+	private Long id;
 	private String name;
 	private LocalDate date;
 	@OneToMany(mappedBy = "party")
@@ -27,7 +27,7 @@ public class Party {
 		// TODO Auto-generated constructor stub
 	}
 
-	public Party(long id, String name, LocalDate date, Set<Rsvp> rsvps) {
+	public Party(Long id, String name, LocalDate date, Set<Rsvp> rsvps) {
 		super();
 		this.id = id;
 		this.name = name;
@@ -35,11 +35,11 @@ public class Party {
 		this.rsvps = rsvps;
 	}
 
-	public long getId() {
+	public Long getId() {
 		return id;
 	}
 
-	public void setId(long id) {
+	public void setId(Long id) {
 		this.id = id;
 	}
 

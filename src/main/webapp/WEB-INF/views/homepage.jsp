@@ -1,6 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
+<%@ taglib uri = "http://java.sun.com/jsp/jstl/functions" prefix = "fn" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -22,8 +24,8 @@
 		<ul>
 			<c:forEach var="party" items="${leListOfParties}">
 				<li><c:out value="${party.name}" /> - <c:out
-						value="${party.date}" /><a href="<c:url value="${partytype.id}"/>"> See Details</a><br></li>
-						<label>RSVP: </label><input type="number" name="rsvpcount" />
+						value="${party.date}" /><a href="<c:url value="${party.id}"/>"> See Details</a><br></li>
+						<p>RSVPs: ${fn:length(party.rsvps)}</p>
 			</c:forEach>
 		</ul>
 	</div>

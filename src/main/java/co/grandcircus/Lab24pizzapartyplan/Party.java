@@ -19,7 +19,7 @@ public class Party {
 	private long id;
 	private String name;
 	private LocalDate date;
-	@OneToMany(mappedBy="party")
+	@OneToMany(mappedBy = "party")
 	private Set<Rsvp> rsvps;
 
 	public Party() {
@@ -27,11 +27,12 @@ public class Party {
 		// TODO Auto-generated constructor stub
 	}
 
-	public Party(long id, String name, LocalDate date) {
+	public Party(long id, String name, LocalDate date, Set<Rsvp> rsvps) {
 		super();
 		this.id = id;
 		this.name = name;
 		this.date = date;
+		this.rsvps = rsvps;
 	}
 
 	public long getId() {
@@ -58,9 +59,17 @@ public class Party {
 		this.date = date;
 	}
 
+	public Set<Rsvp> getRsvps() {
+		return rsvps;
+	}
+
+	public void setRsvps(Set<Rsvp> rsvps) {
+		this.rsvps = rsvps;
+	}
+
 	@Override
 	public String toString() {
-		return "Party [id=" + id + ", name=" + name + ", date=" + date + "]";
+		return "Party [id=" + id + ", name=" + name + ", date=" + date + ", rsvps=" + rsvps + "]";
 	}
 
 }

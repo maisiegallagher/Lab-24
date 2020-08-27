@@ -22,11 +22,29 @@
 		<ul>
 			<c:forEach var="party" items="${leListOfParties}">
 				<li><c:out value="${party.name}" /> - <c:out
-						value="${party.date}" /></li>
+						value="${party.date}" /><a href="<c:url value="${partytype.id}"/>"> See Details</a><br></li>
+						<label>RSVP: </label><input type="number" name="rsvpcount" />
 			</c:forEach>
 		</ul>
+	</div>
 
-
+	<br>
+	<h1>RSVP</h1>
+	<div>
+		<form action="/save-rsvp">
+			<label>Party</label> <select name="party">
+				<c:forEach var="party" items="${leListOfParties}">
+					<option value="${party.id}">
+						<c:out value="${party.name}" />
+					</option>
+				</c:forEach>
+			</select><br>
+			<br> <label>Attendee</label> <input type="text" name="attendee" /><br>
+			<br> <label>Comment</label>
+			<textarea name="comment" rows="4" cols="30">
+     	</textarea>
+			<button type="submit">Submit</button>
+		</form>
 	</div>
 
 </body>

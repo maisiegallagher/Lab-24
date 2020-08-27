@@ -7,6 +7,7 @@ import org.springframework.data.domain.Sort;
 import org.springframework.data.domain.Sort.Direction;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -66,4 +67,12 @@ public class PartyController {
 		model.addAttribute("pizza", pizza);
 		return "review";
 	}
+	@RequestMapping("/{id}")
+	public String showRSVP(Model model,@PathVariable("id") Party party)
+	{
+		model.addAttribute("party",party);
+		return "rsvp";
+	}
+	
+	
 }
